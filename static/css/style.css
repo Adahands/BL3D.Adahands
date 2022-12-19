@@ -1,0 +1,82 @@
+
+h1 {
+    color:green;
+    font-size:50px;
+}
+
+h2 {
+    font-size:15px;
+
+}
+
+h4 {
+    color:blue;
+    font-size:50px;
+
+}
+
+h5 {
+    color:purple;
+    font-size:50px;
+
+}
+
+h6 {
+    color:red;
+    font-size:50px;
+
+}
+
+body {
+    background: #FFC78E;
+
+}
+
+.lego {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+    "red red green green"
+    "red red green green"
+    "red red green green"
+    "red red .     .    ";
+}
+
+.lego1 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+    "red red red red"
+    "red red red red"
+    "green green green green"
+    "green green green green";
+}
+
+.lego2 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+    "red red green green"
+    "red red green green"
+    "blue blue green green"
+    "blue blue .     .    ";
+}
+
+.lego3 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+    "red red green green"
+    "red red green green"
+    "blue blue yellow yellow"
+    "blue blue yellow yellow";
+}
+
+.red { grid-area: red; }
+.yellow { grid-area: yellow; }
+.green { grid-area: green; }
+.blue { grid-area: blue; }
