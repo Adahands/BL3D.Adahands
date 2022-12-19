@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div class="lego">
+    <div class="red"><center><img src="{{ url_for('static',filename='images/YSH/ysh-menu.jpg')}}"width=700, height=590></center></div>
+    <div class="green">
+      <center>
+      <h3 style="font-size:9vw">阿嫂赤肉羹</h3>
+      <br/>
+      <h3 style="font-size:40px">地址:雲林縣虎尾鎮民主四路35號</h3>
+      <br/>
+      <h3 style="font-size:40px"><img src="{{ url_for('static',filename='images/tele.png')}}"width=50, height=50> 0972979269 </h3>
+      <br/>
+      <h3>Instagram:<a href="https://www.instagram.com/a_sao.chirougeng/?igshid=YzA2ZDJiZGQ%3D">阿嫂 赤肉羹</a></h3>
+      <h3>Google Map:<a href="https://goo.gl/maps/GaHFiNDpTyLDr7Td9">阿嫂赤肉羹</a></h3>
+      <br/>
+      <h3 style="font-size:5vw">營業時間</h3>
+      <h3>
+        星期一 10:30–19:30<br/>
+        星期二 10:30–19:30 星期三 10:30–19:30<br/>
+        星期四 10:30–19:30 星期五	10:30–19:30<br/>
+        星期六 10:30–19:00 星期日 10:30–19:00
+
+      </h3>
+      </center>
+    </div>
+  </div>
+
+
+{% if name %}
+    <br/>
+    <h1>評論成功<br/>謝謝你</h1>
+    <br/><br/><br/>
+<table class="table table-success table-striped">
+    {% for our_user in our_users %}
+    <tr>
+    <td>{{our_user.id}}. {{our_user.name
+        }} - {{ our_user.email }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+{% else %}
+    <h1>回饋</h1>
+    <br/>
+<div class="shadow p-3 mb-5 bg-body rounded">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label(class="form-label") }}
+        {{ form.name(class="form-control") }}
+        <br/>
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control") }}
+
+        {{ form.submit(class="btn btn-success") }}
+    </form>
+
+</div>
+<br/><br/><br/>
+<table class="table table-success table-striped">
+    {% for our_user in our_users %}
+    <tr>
+    <td style="font-size:50px" >&nbsp; {{our_user.name
+        }}的評論:&nbsp; {{ our_user.email }}
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
+
+
+

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div class="lego1">
+    <div class="red"><center><img src="{{ url_for('static',filename='images/INS/ins-menu.jpg')}}"width=800, height=500></center></div>
+    <div class="green">
+      <center>
+      <h3 style="font-size:9vw">穎 素 齋</h3>
+      <br/>
+      <h3 style="font-size:40px">地址:雲林縣虎尾鎮民主六路75號</h3>
+      <br/>
+      <h3 style="font-size:40px"><img src="{{ url_for('static',filename='images/tele.png')}}"width=50, height=50> 056325995 </h3>
+      <br/>
+      <h3>Facebook:<a href="https://www.facebook.com/people/%E7%A9%8E%E7%B4%A0%E9%BD%8B/100063671448948/">穎素齋</a></h3>
+      <h3>Google Map:<a href="https://goo.gl/maps/NDoEdUVGnUFX577BA">穎素齋</a></h3>
+      <br/>
+      <h3 style="font-size:5vw">營業時間</h3>
+      <br/>
+      <h3>
+        星期一到六 11:00–14:00 16:00–19:00<br/>
+        星期日 休息
+      </h3>
+      </center>
+    </div>
+  </div>
+<br/><br/><br/><br/><br/><br/><br/>
+
+{% if name %}
+    <br/>
+    <h1>評論成功<br/>謝謝你</h1>
+    <br/><br/><br/>
+<table class="table table-success table-striped">
+    {% for our_user in our_users %}
+    <tr>
+    <td>{{our_user.id}}. {{our_user.name
+        }} - {{ our_user.email }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+{% else %}
+    <h1>回饋</h1>
+    <br/>
+<div class="shadow p-3 mb-5 bg-body rounded">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label(class="form-label") }}
+        {{ form.name(class="form-control") }}
+        <br/>
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control") }}
+
+        {{ form.submit(class="btn btn-success") }}
+    </form>
+
+</div>
+<br/><br/><br/>
+<table class="table table-success table-striped">
+    {% for our_user in our_users %}
+    <tr>
+    <td style="font-size:50px" >&nbsp; {{our_user.name
+        }}的評論:&nbsp; {{ our_user.email }}
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
+

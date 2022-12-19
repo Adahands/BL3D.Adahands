@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div class="lego">
+    <div class="red"><center><img src="{{ url_for('static',filename='images/HTBF/htbf-menu.jpg')}}"width=630, height=900></center></div>
+    <div class="green">
+      <center>
+      <h3 style="font-size:9vw">早 餐 好 樂</h3>
+      <h3 style="font-size:50px">How&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Breakfast</h3>
+      <br/>
+      <h3 style="font-size:40px">地址:雲林縣虎尾鎮工專一街59號</h3>
+      <br/>
+      <h3 style="font-size:40px"><img src="{{ url_for('static',filename='images/tele.png')}}"width=50, height=50> 056361373 </h3>
+      <br/>
+      <h3>Facebook:<a href="https://www.facebook.com/HowTheBreakfastHuwei/">早餐好樂虎尾店How The Breakfast</a></h3>
+      <h3>Google Map:<a href="https://goo.gl/maps/LmjNCfhL7BK48jBJA">早餐好樂虎尾店How The Breakfast</a></h3>
+      <br/>
+      <h3 style="font-size:5vw">營業時間</h3>
+      <h3>
+        星期二 07:00–13:30 星期三 07:00–13:30<br/>
+        星期四 07:00–13:30 星期五 07:00–13:30<br/>
+        星期六 07:00–13:30 星期日 07:00–13:30<br/>
+        星期一 休息
+      </h3>
+      </center>
+    </div>
+  </div>
+<br/>
+{% if name %}
+    <br/>
+    <h1>評論成功<br/>謝謝你</h1>
+    <br/><br/><br/>
+<table class="table table-success table-striped">
+    {% for our_user in our_users %}
+    <tr>
+    <td>{{our_user.id}}. {{our_user.name
+        }} - {{ our_user.email }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+{% else %}
+    <h1>回饋</h1>
+    <br/>
+<div class="shadow p-3 mb-5 bg-body rounded">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label(class="form-label") }}
+        {{ form.name(class="form-control") }}
+        <br/>
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control") }}
+
+        {{ form.submit(class="btn btn-success") }}
+    </form>
+
+</div>
+<br/><br/><br/>
+<table class="table table-success table-striped">
+    {% for our_user in our_users %}
+    <tr>
+    <td style="font-size:50px" >&nbsp; {{our_user.name
+        }}的評論:&nbsp; {{ our_user.email }}
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

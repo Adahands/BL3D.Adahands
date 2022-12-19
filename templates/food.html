@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="lego3">
+    <div class="red">
+      <a href="{{ url_for('rice') }}"><img src="{{ url_for('static',filename='images/rice.jpg')}}"width=750, height=750""></a>
+    </div>
+    <div class="blue">
+      <a href="{{ url_for('noodle') }}"><img src="{{ url_for('static',filename='images/noodle.jpg')}}"width=750, height=750""></a>
+    </div>
+    <div class="green">
+      <a href="#"><img src="{{ url_for('static',filename='images/fried.jpg')}}"width=750, height=750""></a>
+    </div>
+    <div class="yellow">
+      <a href="{{ url_for('sweet') }}"><img src="{{ url_for('static',filename='images/sweet.jpg')}}"width=750, height=750""></a>
+    </div>
+  </div>
+
+{% endblock %}
+
+

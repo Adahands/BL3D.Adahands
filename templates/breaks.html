@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>
+    <a href="{{ url_for('htbf') }}"><img src="{{ url_for('static', filename='images/HTBF/how-the-breakfast.jpg') }}" style="height:300px;width:300px"></a>
+    <a href="{{ url_for('seek') }}"><img src="{{ url_for('static', filename='images/SEEK/seek.jpg') }}" style="height:300px;width:300px"></a>
+  </h3>
+{% endblock %}

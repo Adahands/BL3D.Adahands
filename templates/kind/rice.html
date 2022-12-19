@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>
+    <a href="{{ url_for('ysh') }}"><img src="{{ url_for('static', filename='images/YSH/ysh.jpg') }}" style="height:300px;width:300px"></a>
+    <a href="{{ url_for('seek') }}"><img src="{{ url_for('static', filename='images/SEEK/seek.jpg') }}" style="height:300px;width:300px"></a>
+    <a href="{{ url_for('cow') }}"><img src="{{ url_for('static', filename='images/COW/cow.jpg') }}" style="height:300px;width:300px"></a>
+    <a href="{{ url_for('go') }}"><img src="{{ url_for('static', filename='images/GO/go.jpg') }}" style="height:300px;width:300px"></a>
+    <a href="{{ url_for('ins') }}"><img src="{{ url_for('static', filename='images/INS/ins.jpg') }}" style="height:300px;width:300px"></a>
+
+  </h3>
+{% endblock %}

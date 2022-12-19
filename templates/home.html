@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> Welcome to <storong>BL3D!!</storong> </h1>
+    <br/>
+    <h1>BL3D is a tool for you search the store of eating,</h1>
+    <h1>if you don't know what to eat.</h1>
+    <br/>
+    <h1/>All the store in our website are all nearby
+    <a class="link-success" href="https://goo.gl/maps/6wsr3xjrRTvMvXt99">National Formosa University</a>.</h1>
+    <br/><br/>
+
+    <center><img src="{{ url_for('static',
+    filename='images/home-page1.jpg')}}"width=1000>
+    </center>
+    <br/>
+
+
+    <center>
+        <a href="{{ url_for('breaks') }}" style="color:#E800E8">Breakfast</a>   *
+        <a href="{{ url_for('lunch') }}" style="color:#0000C6">Lunch</a>   *
+        <a href="{{ url_for('dinner') }}" style="color:#00ff00">Dinner</a>   *
+        <a href="{{ url_for('dessert') }}" style="color:#00ff00">Dessert</a>   *
+        <a href="{{ url_for('drink') }}" style="color:#00ff00">Drink</a>
+        </center>
+    <center>
+        <h2>made by '胡嘉鴻'  '劉秉憲'  '李柏呈'</h2>
+    </center>
+{% endblock %}

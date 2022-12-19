@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 style="font-size:5vw">團隊成員</h1>
+  <br/>
+  <h4>程式撰寫與版面構析: 胡嘉鴻</h4>
+  <img src="{{ url_for('static',filename='images/51033101.jpg')}}"width=650, height=700">
+  <br/>
+  <h5>程式檢查及測試: 劉秉憲</h5>
+  <img src="{{ url_for('static',filename='images/51033112.jpg')}}"width=1000, height=700">
+  <br/>
+  <h6>資料收集: 李柏呈</h6>
+  <img src="{{ url_for('static',filename='images/51033115.jpg')}}"width=900, height=900">
+  <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+{% endblock %}
